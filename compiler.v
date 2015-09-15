@@ -29,3 +29,6 @@ Fixpoint execute (lst : instrlist) (stack : natlist) : natlist :=
 			| pop => execute t (pop_stack stack)
 		end
 end.
+
+Example test_execute1 : execute (build (push 5) empty) nil = cons 5 nil.
+Proof. reflexivity. Qed.
