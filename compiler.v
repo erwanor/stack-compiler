@@ -9,3 +9,8 @@ Inductive source_expr : Type :=
 Inductive instr : Type :=
 	| pop : instr
 	| push : nat -> instr.
+
+Inductive instrlist : Type :=
+	| empty : instrlist
+	| build : instr -> instrlist -> instrlist.
+
