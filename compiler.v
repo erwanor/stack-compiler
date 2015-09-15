@@ -14,3 +14,10 @@ Inductive instrlist : Type :=
 	| empty : instrlist
 	| build : instr -> instrlist -> instrlist.
 
+Definition pop_stack (s : natlist) : natlist :=
+	match s with
+		| nil => nil
+		| cons h (cons h' t) => cons (h + h') t
+		| _ => s
+end.
+
