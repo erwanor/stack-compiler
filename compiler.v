@@ -32,3 +32,9 @@ end.
 
 Example test_execute1 : execute (build (push 5) empty) nil = cons 5 nil.
 Proof. reflexivity. Qed.
+
+Example test_execute2 : execute (build (push 5) (build (push 3) (build pop empty))) nil = cons 8 nil.
+Proof. reflexivity. Qed.
+
+Example test_execute3 : execute (build pop empty) (cons 1 (cons 2 nil)) = cons 3 nil.
+Proof. reflexivity. Qed.
