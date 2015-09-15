@@ -21,3 +21,11 @@ Definition pop_stack (s : natlist) : natlist :=
 		| _ => s
 end.
 
+Fixpoint execute (lst : instrlist) (stack : natlist) : natlist :=
+	match lst with
+		| empty => stack 
+		| build h t => match h with
+			| (push n') => execute t (cons n' stack)
+			| pop => execute t (pop_stack stack)
+		end
+end.
